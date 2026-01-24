@@ -1,0 +1,127 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@plugin "tailwindcss-animate";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --font-sans: var(--font-inter);
+  --font-mono: var(--font-jetbrains-mono);
+  
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  
+  /* Custom FinTech Colors */
+  --color-charcoal-900: #0f172a;
+  --color-charcoal-800: #1e293b;
+  --color-electric-blue: #3b82f6;
+  --color-danger-red: #ef4444;
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+}
+
+/* 
+  Forcing Dark Mode FinTech Theme
+  Background: #0f172a (Slate 900)
+  Foreground: #f8fafc (Slate 50)
+  Primary: #3b82f6 (Blue 500)
+  Destructive: #ef4444 (Red 500)
+*/
+:root {
+  --background: #0f172a;
+  --foreground: #f8fafc;
+  
+  --card: #1e293b; /* Slate 800 */
+  --card-foreground: #f8fafc;
+  
+  --popover: #0f172a;
+  --popover-foreground: #f8fafc;
+  
+  --primary: #3b82f6;
+  --primary-foreground: #ffffff;
+  
+  --secondary: #1e293b;
+  --secondary-foreground: #f8fafc;
+  
+  --muted: #334155; /* Slate 700 */
+  --muted-foreground: #94a3b8; /* Slate 400 */
+  
+  --accent: #1e293b;
+  --accent-foreground: #f8fafc;
+  
+  --destructive: #ef4444;
+  --destructive-foreground: #ffffff;
+  
+  --border: #334155;
+  --input: #334155;
+  --ring: #3b82f6;
+  
+  --radius: 0.5rem;
+}
+
+.dark {
+  --background: #0f172a;
+  --foreground: #f8fafc;
+  
+  --card: #1e293b;
+  --card-foreground: #f8fafc;
+  
+  --popover: #0f172a;
+  --popover-foreground: #f8fafc;
+  
+  --primary: #3b82f6;
+  --primary-foreground: #ffffff;
+  
+  --secondary: #1e293b;
+  --secondary-foreground: #f8fafc;
+  
+  --muted: #334155;
+  --muted-foreground: #94a3b8;
+  
+  --accent: #1e293b;
+  --accent-foreground: #f8fafc;
+  
+  --destructive: #ef4444;
+  --destructive-foreground: #ffffff;
+  
+  --border: #334155;
+  --input: #334155;
+  --ring: #3b82f6;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}

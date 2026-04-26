@@ -39,7 +39,7 @@ export function DevUploadView({ onSubmit }: DevUploadViewProps) {
           <br />
           <span className="text-white/45">Lock the funds.</span>
           <br />
-          <span className="text-[#00f0ff]">Trust nothing.</span>
+          <span className="text-[#00f0ff]">Clean Code.</span>
         </h1>
 
         <p className="vigil-rise vigil-delay-200 mt-8 max-w-md font-mono text-[13px] leading-relaxed text-white/55">

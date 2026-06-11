@@ -300,13 +300,15 @@ export default function Home() {
 
         {/* FOOTER */}
         <footer className="py-12 border-t border-white/10 text-center text-slate-500 text-sm relative z-10 bg-[#0f172a]">
-          <p className="mb-4">© 2026 Code.Vigil Inc. Built for GDG TechSprint.</p>
+          <p className="mb-4">© 2026 Code.Vigil Inc.</p>
           <div className="flex justify-center gap-6">
             <Link href="#" className="hover:text-blue-400 transition-colors">Privacy Policy</Link>
             <Link href="#" className="hover:text-blue-400 transition-colors">Terms of Service</Link>
             <Link href="#" className="hover:text-blue-400 transition-colors">Twitter</Link>
           </div>
-          <p className="mb-4">MVP by Code.Vigil</p>
+
+
+          <p className="mb-4">Code.Vigil</p>
         </footer>
 
       </div>

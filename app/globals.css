@@ -6,122 +6,352 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
-  --font-sans: var(--font-inter);
-  --font-mono: var(--font-jetbrains-mono);
-  
+  --font-sans: var(--font-sans);
+  --font-mono: var(--font-mono);
+  --font-display: var(--font-display);
+
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  
+
   --color-card: var(--card);
   --color-card-foreground: var(--card-foreground);
-  
+
   --color-popover: var(--popover);
   --color-popover-foreground: var(--popover-foreground);
-  
+
   --color-primary: var(--primary);
   --color-primary-foreground: var(--primary-foreground);
-  
+
   --color-secondary: var(--secondary);
   --color-secondary-foreground: var(--secondary-foreground);
-  
+
   --color-muted: var(--muted);
   --color-muted-foreground: var(--muted-foreground);
-  
+
   --color-accent: var(--accent);
   --color-accent-foreground: var(--accent-foreground);
-  
+
   --color-destructive: var(--destructive);
   --color-destructive-foreground: var(--destructive-foreground);
-  
+
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
-  
-  /* Custom FinTech Colors */
-  --color-charcoal-900: #0f172a;
-  --color-charcoal-800: #1e293b;
-  --color-electric-blue: #3b82f6;
-  --color-danger-red: #ef4444;
+
+  /* Vigil custom palette — obsidian + neon-cyan + electric-violet */
+  --color-obsidian: #07070b;
+  --color-obsidian-2: #0c0c14;
+  --color-obsidian-3: #14141f;
+  --color-cyan: #00f0ff;
+  --color-violet: #7c3aed;
+  --color-signal: #ff2d55;
 
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
 }
 
-/* 
-  Forcing Dark Mode FinTech Theme
-  Background: #0f172a (Slate 900)
-  Foreground: #f8fafc (Slate 50)
-  Primary: #3b82f6 (Blue 500)
-  Destructive: #ef4444 (Red 500)
+/*
+  VIGIL — High-End Cyberpunk × Brutalist Minimalism
+  Obsidian off-black canvas. Electric violet + neon cyan accents.
+  Signal red reserved for danger / locked states.
 */
 :root {
-  --background: #0f172a;
-  --foreground: #f8fafc;
-  
-  --card: #1e293b; /* Slate 800 */
-  --card-foreground: #f8fafc;
-  
-  --popover: #0f172a;
-  --popover-foreground: #f8fafc;
-  
-  --primary: #3b82f6;
-  --primary-foreground: #ffffff;
-  
-  --secondary: #1e293b;
-  --secondary-foreground: #f8fafc;
-  
-  --muted: #334155; /* Slate 700 */
-  --muted-foreground: #94a3b8; /* Slate 400 */
-  
-  --accent: #1e293b;
-  --accent-foreground: #f8fafc;
-  
-  --destructive: #ef4444;
+  --background: #07070b;
+  --foreground: #eef0ff;
+
+  --card: #0c0c14;
+  --card-foreground: #eef0ff;
+
+  --popover: #07070b;
+  --popover-foreground: #eef0ff;
+
+  --primary: #00f0ff;
+  --primary-foreground: #07070b;
+
+  --secondary: #14141f;
+  --secondary-foreground: #eef0ff;
+
+  --muted: #14141f;
+  --muted-foreground: #8b8ea8;
+
+  --accent: #7c3aed;
+  --accent-foreground: #ffffff;
+
+  --destructive: #ff2d55;
   --destructive-foreground: #ffffff;
-  
-  --border: #334155;
-  --input: #334155;
-  --ring: #3b82f6;
-  
-  --radius: 0.5rem;
+
+  --border: rgba(255, 255, 255, 0.08);
+  --input: rgba(255, 255, 255, 0.08);
+  --ring: #00f0ff;
+
+  --radius: 0.125rem;
 }
 
 .dark {
-  --background: #0f172a;
-  --foreground: #f8fafc;
-  
-  --card: #1e293b;
-  --card-foreground: #f8fafc;
-  
-  --popover: #0f172a;
-  --popover-foreground: #f8fafc;
-  
-  --primary: #3b82f6;
-  --primary-foreground: #ffffff;
-  
-  --secondary: #1e293b;
-  --secondary-foreground: #f8fafc;
-  
-  --muted: #334155;
-  --muted-foreground: #94a3b8;
-  
-  --accent: #1e293b;
-  --accent-foreground: #f8fafc;
-  
-  --destructive: #ef4444;
+  --background: #07070b;
+  --foreground: #eef0ff;
+  --card: #0c0c14;
+  --card-foreground: #eef0ff;
+  --popover: #07070b;
+  --popover-foreground: #eef0ff;
+  --primary: #00f0ff;
+  --primary-foreground: #07070b;
+  --secondary: #14141f;
+  --secondary-foreground: #eef0ff;
+  --muted: #14141f;
+  --muted-foreground: #8b8ea8;
+  --accent: #7c3aed;
+  --accent-foreground: #ffffff;
+  --destructive: #ff2d55;
   --destructive-foreground: #ffffff;
-  
-  --border: #334155;
-  --input: #334155;
-  --ring: #3b82f6;
+  --border: rgba(255, 255, 255, 0.08);
+  --input: rgba(255, 255, 255, 0.08);
+  --ring: #00f0ff;
 }
 
 @layer base {
   * {
-    @apply border-border outline-ring/50;
+    border-color: var(--border);
   }
   body {
-    @apply bg-background text-foreground;
+    background-color: var(--background);
+    color: var(--foreground);
+    font-feature-settings: "ss01", "cv11";
+  }
+  ::selection {
+    background-color: rgba(0, 240, 255, 0.25);
+    color: #ffffff;
   }
 }
+
+/* ============================================================
+   VIGIL ATMOSPHERE — grain, mesh, scanlines, glow
+   ============================================================ */
+
+/* Subtle film grain overlay */
+.vigil-grain::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.06;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)' opacity='0.9'/></svg>");
+  z-index: 1;
+}
+
+/* Soft gradient mesh — violet + cyan blooms */
+.vigil-mesh {
+  background-color: #07070b;
+  background-image:
+    radial-gradient(at 18% 22%, rgba(124, 58, 237, 0.35) 0px, transparent 45%),
+    radial-gradient(at 82% 18%, rgba(0, 240, 255, 0.22) 0px, transparent 50%),
+    radial-gradient(at 70% 88%, rgba(124, 58, 237, 0.28) 0px, transparent 55%),
+    radial-gradient(at 12% 78%, rgba(0, 240, 255, 0.18) 0px, transparent 50%);
+}
+
+/* Faint vertical/horizontal grid */
+.vigil-grid {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+  background-size: 56px 56px;
+}
+
+/* Glassmorphic surface */
+.vigil-glass {
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.04) 0%,
+    rgba(255, 255, 255, 0.015) 100%
+  );
+  backdrop-filter: blur(18px) saturate(140%);
+  -webkit-backdrop-filter: blur(18px) saturate(140%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Cyan glow ring */
+.vigil-glow-cyan {
+  box-shadow:
+    0 0 0 1px rgba(0, 240, 255, 0.25),
+    0 0 28px -4px rgba(0, 240, 255, 0.45),
+    inset 0 0 22px -8px rgba(0, 240, 255, 0.25);
+}
+
+.vigil-glow-violet {
+  box-shadow:
+    0 0 0 1px rgba(124, 58, 237, 0.3),
+    0 0 32px -4px rgba(124, 58, 237, 0.55),
+    inset 0 0 24px -8px rgba(124, 58, 237, 0.3);
+}
+
+/* Scanline shimmer for active states */
+@keyframes vigil-scan {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(100%);
+  }
+}
+.vigil-scanline::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 30%;
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    rgba(0, 240, 255, 0.08) 50%,
+    transparent 100%
+  );
+  animation: vigil-scan 3.5s linear infinite;
+  pointer-events: none;
+}
+
+/* Glitch sweep used for the audit-running state */
+@keyframes vigil-sweep {
+  0% {
+    transform: translateX(-120%);
+  }
+  100% {
+    transform: translateX(120%);
+  }
+}
+.vigil-sweep {
+  animation: vigil-sweep 2.4s cubic-bezier(0.6, 0, 0.4, 1) infinite;
+}
+
+/* Slow rotation for orbital audit visualization */
+@keyframes vigil-orbit {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.vigil-orbit {
+  animation: vigil-orbit 18s linear infinite;
+}
+.vigil-orbit-rev {
+  animation: vigil-orbit 26s linear infinite reverse;
+}
+
+/* Pulsing core for audit hero animation */
+@keyframes vigil-pulse {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.85;
+  }
+  50% {
+    transform: scale(1.08);
+    opacity: 1;
+  }
+}
+.vigil-pulse {
+  animation: vigil-pulse 2.4s ease-in-out infinite;
+}
+
+/* Code-stream rain for the loading state */
+@keyframes vigil-stream {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+}
+.vigil-stream-col {
+  animation: vigil-stream linear infinite;
+}
+
+/* Sweeping highlight on the giant CTA */
+@keyframes vigil-cta-shine {
+  0% {
+    transform: translateX(-150%) skewX(-20deg);
+  }
+  100% {
+    transform: translateX(250%) skewX(-20deg);
+  }
+}
+.vigil-cta-shine::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.18) 50%,
+    transparent 100%
+  );
+  width: 40%;
+  pointer-events: none;
+  animation: vigil-cta-shine 2.6s ease-in-out infinite;
+}
+
+/* Staggered fade-up entrance */
+@keyframes vigil-rise {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.vigil-rise {
+  animation: vigil-rise 0.6s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+
+/* Hairline brackets used as drop-zone corners */
+.vigil-bracket {
+  position: absolute;
+  width: 28px;
+  height: 28px;
+  border-color: rgba(0, 240, 255, 0.6);
+  transition: all 0.4s ease;
+}
+
+/* Diagonal accent line for brutalist headers */
+.vigil-rule {
+  background-image: repeating-linear-gradient(
+    -45deg,
+    rgba(0, 240, 255, 0.4) 0px,
+    rgba(0, 240, 255, 0.4) 6px,
+    transparent 6px,
+    transparent 12px
+  );
+}
+
+/* Watermark for proof-of-work card */
+.vigil-watermark {
+  background-image: repeating-linear-gradient(
+    -22deg,
+    rgba(255, 255, 255, 0.04) 0,
+    rgba(255, 255, 255, 0.04) 1px,
+    transparent 1px,
+    transparent 14px
+  );
+}
+
+/* Animation delay utilities for staggered reveals */
+.vigil-delay-100 { animation-delay: 100ms; }
+.vigil-delay-200 { animation-delay: 200ms; }
+.vigil-delay-300 { animation-delay: 300ms; }
+.vigil-delay-400 { animation-delay: 400ms; }
+.vigil-delay-500 { animation-delay: 500ms; }
+.vigil-delay-600 { animation-delay: 600ms; }
+.vigil-delay-700 { animation-delay: 700ms; }
+.vigil-delay-800 { animation-delay: 800ms; }
+.vigil-delay-900 { animation-delay: 900ms; }
+.vigil-delay-1000 { animation-delay: 1000ms; }
